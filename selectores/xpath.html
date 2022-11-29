@@ -3,7 +3,9 @@
     4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
 
 Videos/Temas contenidos del Dashboard: 
-    -Elementos de jQuery: Seleccion por atributo
+    -Elementos de jQuery: 
+-Seleccion por atributo
+-Selecciones con busqueda
 
 -Realizaremos un boton "Revelar" que al clickear, lo que hara es revelar justamente los Enlaces que sean del tipo de atributo href unicamente. Veremos que pinta los href y no asi los de la lista ordenada.
 
@@ -15,7 +17,7 @@ Videos/Temas contenidos del Dashboard:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery - Selectores 4º</title>
+    <title>jQuery - Selectores 4º/5º</title>
 
     <script type="text/javascript" src="../jquery/jquery.js">
     </script>
@@ -32,11 +34,52 @@ Videos/Temas contenidos del Dashboard:
             x.click(mostrar);
         }
         
+        /* MODIFICA TODOS LOS "HREF"
+        Comentamos este mostrar que modifica todos los href para explicar el sgte caso donde lo hara mediante la busqueda de elementos de ese href. Pinta todos los href.
+        
         function mostrar()
         {
             var x = $("[href]"); //Entre [] seleccionamos los atributos para su modificacion css.
             x.css("background","yellow");
         }
+
+        */
+
+        /*MODIFICA Y BUSCA TODOS LOS "HREF" que tengan #. Pinta todos los href que tengan #. Comento para ejemplificar sgte.
+        function mostrar()
+        {
+            var x = $("[href='#']"); //Entre [] seleccionamos los atributos para su modificacion css + los que tengan #.
+        
+            x.css("background","yellow");
+        }
+
+        */
+
+        /*MODIFICA Y BUSCA TODOS LOS "HREF" DISTINTOS a #. Pinta todos los elementos del documento menos o distinto a aquellos que tengan #, entonces asi, pinta todo el documento menos los href que tienen #. Comento para ejemplificar sgte.
+        function mostrar()
+        {
+            var x = $("[href!='#']"); //Entre [] seleccionamos los atributos para su modificacion css + signo != distinto a, y por ultimo el elemento.
+        
+            x.css("background","yellow");
+        }
+
+        */
+
+        /*MODIFICA Y BUSCA TODOS LOS "HREF" que tengan el caracter ".jpg" en su cadena de texto. Pinta unicamente el href que tiene la imagen.jpg.
+
+        -Sucedera lo mismo si lo hacemos para imagen.png si ponemos: var x = $("[href$='.png']");
+
+        */
+       
+        function mostrar()
+        
+        {
+            var x = $("[href$='.jpg']"); //Entre [] seleccionamos los atributos para su modificacion css + el simbolo $= que buscar cadenas de caracteres que tengan escrito dentro .jpg
+        
+            x.css("background","yellow");
+        }
+
+        
 
     </script>
 
@@ -44,8 +87,8 @@ Videos/Temas contenidos del Dashboard:
 <body>
     <input type="button" id="revelar" value="Revelar"><br>
         <a href="#">Enlace 1</a><br>
-        <a href="#">Enlace 2</a><br>
-        <a href="#">Enlace 3</a><br>
+        <a href="imagen.jpg">Enlace 2</a><br>
+        <a href="imagen.png">Enlace 3</a><br>
         <a href="#">Enlace 4</a><br>
         <a href="#">Enlace 5</a><br>
 
