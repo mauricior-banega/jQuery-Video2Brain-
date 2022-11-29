@@ -1,0 +1,63 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-Leer y escribir con texto.
+
+-Realizaremos dos botones donde uno mostrara el valor que contiene p, es decir la oracion definida. Esta se mostrara mediante un alert; luego el otro boton cambiara el contenido de ese p por todas XXXXXXX que se pasara amostrar reemplazando el texto anterior.s
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Métodos 1º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x =$("#boton1");
+            x.click(leer);
+            x=$("#boton2");
+            x.click(escribir);
+        }
+
+        function leer()
+        {
+            var x =$("p");
+            alert(x.text()); //Cuando a text no le pasamos paramentros lo usamos para leer el contenido de algo. Que luego se mostrara en la pantalla flotante del alert lo que este en p en este caso.
+        }
+
+        function escribir()
+        {
+            var x =$("p");
+            x.text("XXXXXXXXXXXXXXXXXXXXXXX"); //Acá si le pasamos parametro, le indicamos el nuevo texto que sobrescribirá. Si tocamos nuevamente en Leer texto, nos mostrara en el alert el texto nuevo, es decir la cadena nueva que tendra "p", que son todas las XXX
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+    <input type="button" id="boton1" value="Leer texto">
+    <input type="button" id="boton2" value="Escribir texto">
+
+    <p>Este es el texto antiguo</p>
+    
+    
+
+</body>
+</html>
