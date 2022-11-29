@@ -1,0 +1,60 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: Seleccion por atributo
+
+-Realizaremos un boton "Revelar" que al clickear, lo que hara es revelar justamente los Enlaces que sean del tipo de atributo href unicamente. Veremos que pinta los href y no asi los de la lista ordenada.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selectores 4º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $("#revelar");
+            x.click(mostrar);
+        }
+        
+        function mostrar()
+        {
+            var x = $("[href]"); //Entre [] seleccionamos los atributos para su modificacion css.
+            x.css("background","yellow");
+        }
+
+    </script>
+
+</head>
+<body>
+    <input type="button" id="revelar" value="Revelar"><br>
+        <a href="#">Enlace 1</a><br>
+        <a href="#">Enlace 2</a><br>
+        <a href="#">Enlace 3</a><br>
+        <a href="#">Enlace 4</a><br>
+        <a href="#">Enlace 5</a><br>
+
+        <ul>
+            <li>Enlace 1</li>
+            <li>Enlace 2</li>
+            <li>Enlace 3</li>
+            <li>Enlace 4</li>
+            <li>Enlace 5</li>
+        </ul>
+</body>
+</html>
