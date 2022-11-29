@@ -1,0 +1,79 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-Selecciones multiples
+
+-Realizaremos un boton "Revelar" que al clickear, lo que hara es pintar los h1 con un ID en especifico. Luego explica como pinta todos los li de una lista ordenada y solo el 1º.
+-Creo una funcion mostrar2 para verlo en el mismo doc.s
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selectores 6º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $("#revelar");
+            x.click(mostrar);
+            x.click(mostrar2); //Pasamos aca mismo que se ejecute el mostrar2 y verlo asi para ambos elementos.
+        }
+
+        function mostrar()
+        {
+            var x= $("h1#cambiame"); //Indica que seleccione el h1 con ID "cambiame". Aplica seleccion multiple
+            x.css("background","yellow");
+        }
+
+        //Se crea mostrar2 para ejemplificar como se aplica la seleccion multiple para un alista ordenada.
+
+
+
+        function mostrar2()
+        {
+            var x= $("li::first"); //Indica que seleccione el 1º elemento li. Si lo especificamos ::first, pintara claro todo los li.
+            x.css("background","yellow");
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    
+    <input type="button" id="revelar" value="Revelar"><br>
+
+    <p>Soy un párrafo</p>
+    <p id="cambiame">Soy un párrafo</p>
+    <h1 id="cambiame">Soy un título</h1>
+    <h1>Soy otro título</h1>
+
+    <br>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+
+</body>
+</html>
