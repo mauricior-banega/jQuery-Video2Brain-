@@ -1,0 +1,64 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: Cambio de propiedades por etiqueta
+
+-Realizaremos 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Selectores 3º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("h1"); 
+            x.click(presionar); //Llama a la funcion presionar cuando se clickea en la etiqueta h1
+        }
+
+        function presionar()
+        {
+            var x;
+            x = $(this); //(1*)
+            x.css("font-size","12px");
+
+            /*(1*)Cuando se selecciona la etiqueta h1 cambia la fuente de ella, sin necesidad de pasarle ID o Clase.
+
+            Sucede que si dejamos la especificacion h1 al clickear cambiara la de todos los h1 y no el que clickeamos UNICAMENTE. Por ello cambiamos, en vez de pasar en la funcion presionar "h1", ponemos this (sin comillas). Asi quedara y dejo como estaba antes:
+
+            x = $("h1");
+
+            */
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Yo soy un título</h1>
+    <p>Yo soy un párrafo</p>
+    <h1>Yo soy un título</h1>
+    <p>Yo soy un párrafo</p>
+    <h1>Yo soy un título</h1>
+    <p>Yo soy un párrafo</p>
+    <h1>Yo soy un título</h1>
+    <p>Yo soy un párrafo</p>
+</body>
+</html>
