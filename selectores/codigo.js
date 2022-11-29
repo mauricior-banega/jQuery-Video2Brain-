@@ -1,5 +1,5 @@
 var x;
-x = $(document); // La variable x se refiere o apunta al documento para luego inicializarlo.
+x = $(document); // La variable x se refiere o apunta al documento/HTML para luego inicializarlo.
 
 x.ready(inicializar);
 
