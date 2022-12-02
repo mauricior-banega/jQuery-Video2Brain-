@@ -1,0 +1,89 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-Leer y escribir con texto.
+
+-Realizaremos una tabla con un "borde" que aloja dentro de cada celda los nº 1234. El practico consiste que mediante 3 botones podamos leer/cambiar/quitar ese borde de tabla.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Métodos 2º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x = $("#boton1");
+            x.click(leer);
+                x = $("#boton2");
+            x.click(escribir);
+                x = $("#boton3");
+            x.click(borrar);
+        }
+
+        function leer() //FUNCION DE LECTURA DEL ATRIBUTO
+        {
+            var x = $("table"); //Indicamos que x sea igual al valor de tabla.
+            alert(x.attr("border")); //Queremos conocer cual es el valor de "border". Indicando aqui unicamente la propiedad de destino.
+
+            //Ademas mostrara en un ALERT cual es el valor actual de border.
+
+        }
+
+        function escribir()  //FUNCION DE EDICION DE BORDE
+        {
+            var x = $("table"); //Indicamos que x sea igual al valor de tabla.
+            x.attr("border","4"); //Queremos conocer cual es el valor de "border". Indicamos la propiedad de destino y ademas la unidad de valor.
+            
+            //Aqui no sera necesario mostrar un alert ya que veremos el efecto directamente en la pantalla.
+            
+        }
+
+        function borrar()  //FUNCION BORRAR BORDE
+        {
+            var x = $("table"); 
+            x.removeAttr("border"); //Esta propiedad QUITA el atributo directamente (no es que lo vuelve a 0, aclaro).
+            
+            //Aqui tampoco sera necesario mostrar un alert ya que veremos el efecto directamente en la pantalla.
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <input type="button" id="boton1" value="Leer texto">
+    <input type="button" id="boton2" value="Escribir">
+    <input type="button" id="boton3" value="Borrar">
+
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+    
+    
+
+</body>
+</html>
