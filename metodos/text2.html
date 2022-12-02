@@ -1,0 +1,83 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-Añadir sin borrar
+
+-Basado en el practico text.html donde el boton 2 Escribia texto pero borrando el anterior, con los metodos que ampliaremos a continuacion podremos añadir sin borrar, añadiendo sobre el mismo objeto creado "append/"prepend" o creando un objeto nuevo del mismo tipo "after"/"before".
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Métodos 5º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x =$("#boton1");
+            x.click(leer);
+            x=$("#boton2");
+            x.click(escribir);
+        }
+
+        function leer()
+        {
+            var x =$("p");
+            alert(x.text()); 
+        }
+
+        //Basados en esta funcion de ESCRIBIR veremos cada ejemplo sobre AÑADIR, en este caso texto.
+
+
+        function escribir() 
+        {
+            var x =$("p");
+            x.append("XXXXXXXXXXXXXXXXXXXXXXX"); 
+            
+            // EXPLICAMOS 4 METODOS DE AÑADIDURA 
+
+            //Con "append" adjuntamos el texto DESPUES del texto antiguo sin borrar; quedara: Este es el texto antiguoXXXXXXXXXXXXXXXX
+            //Con "prepend" adjuntamos el texto ANTES del texto antiguo sin borrar; quedara: XXXXXXXXXXXXXXXXEste es el texto antiguo
+
+            /*Con "after" ponemos un elemento NUEVO, DEPUES del texto antiguo, sin borrarlo; quedara: 
+            
+            Este es el texto antiguo
+            XXXXXXXXXXXXXXXX
+            */
+
+            /*Con "before" ponemos un elemento NUEVO, ANTES del texto antiguo, sin borrarlo; quedara: 
+
+            XXXXXXXXXXXXXXXX
+            Este es el texto antiguo
+            
+            */
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+    <input type="button" id="boton1" value="Leer texto">
+    <input type="button" id="boton2" value="Escribir texto">
+
+    <p>Este es el texto antiguo</p>
+    
+    
+
+</body>
+</html>
