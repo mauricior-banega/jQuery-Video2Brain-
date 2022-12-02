@@ -1,0 +1,69 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-Añadir HTML
+
+-Realizaremos un boton que acciona la creacion de codigo HTML al HTML que ya tenemos creado. Basicamente creamos un formulario muy basico pero que sirve para mostrarnos como insertar HTML mediante jQuery.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Métodos 4º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+    
+        var x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x = $ ("#boton1");
+            x.click(muestrahtml);
+
+        }
+
+        function muestrahtml()
+        {
+            var x;
+            x = ("#formulario");
+            x.html(' <form><input type="text"><input type="submit"></form>'); //Dentro del entrecomillado vemos el formulario que contiene un input para el texto y un boton para enviar.
+        }
+
+
+    </script>
+
+    <style type="text/css"> /*Estilos CSS*/
+
+        .noticia /*Clase noticia*/
+        {
+            width: 500px;
+            height: 500px;
+            border:1px solid black;
+            font-family: Arial;
+            font: heigth 10px;
+            color: grey;
+            background-color:rgb(200,200,200);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <input type="button" id="boton1" value="Formulario">
+
+    Aqui irá el Formulario
+        <div id="formulario"></div>
+
+</body>
+</html>
