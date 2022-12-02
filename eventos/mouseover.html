@@ -1,0 +1,57 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-MouseOver y MouseOut
+
+-Mediante 2 funciones aplicaremos que se lleven a cabo 2 eventos, que modifiquen el fondo de un texto. Manipulamos los eventos MouseOver y MouseOut para cada caso.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 1º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x =$("#hola");
+            x.mouseover(entraRaton);
+            x.mouseout(saleRaton);
+            
+        }
+
+        function entraRaton()
+        {
+           $(this).css("background-color","yellow"); //Cambiamos el fondo del texto a amarillo
+        }
+
+        function saleRaton()
+        {
+           $(this).css("background-color","white"); //Cambiamos el fondo del texto a blanco, como por defecto.
+        }
+
+        
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="hola">Entras y sales</div>
+
+</body>
+</html>
