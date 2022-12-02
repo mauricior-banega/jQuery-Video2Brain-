@@ -7,6 +7,7 @@ Videos/Temas contenidos del Dashboard:
 -MouseOver y MouseOut
 
 -Mediante 2 funciones aplicaremos que se lleven a cabo 2 eventos, que modifiquen el fondo de un texto. Manipulamos los eventos MouseOver y MouseOut para cada caso.
+-Se explica y comenta tambien, que podemos usar el metodo "hover" para especificar ambas instancias del evento mouse. Veremos como declararlas dentro de hover.
 -->
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ Videos/Temas contenidos del Dashboard:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery - Eventos 1º</title>
+    <title>jQuery - Eventos 1º + HOVER</title>
 
     <script type="text/javascript" src="../jquery/jquery.js">
     </script>
@@ -29,9 +30,12 @@ Videos/Temas contenidos del Dashboard:
         function inicializar()
         {
             var x =$("#hola");
-            x.mouseover(entraRaton);
-            x.mouseout(saleRaton);
+          //  x.mouseover(entraRaton); 
+          //  x.mouseout(saleRaton);
+
+          //Podemos usarlo asi o incluido con "hover" que contenga ambas acciones. Cabe aclarar que si hayb algun caso donde tengamos que usar una de las 2 si es conveniente usar mouseover o mouseout, sino es mas practico con hover.
             
+              x.hover(entraRaton,saleRaton)  //Asi se realiza la declaracion; pasando como indicador ambas funciones que haran el cambio CSS segun cada caso.
         }
 
         function entraRaton()
