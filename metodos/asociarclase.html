@@ -1,0 +1,77 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+-Añadir y quitar clases.
+
+-Realizaremos dos botones que nos permitiran añadir una clase css a un texto, y tambien quitarla.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Métodos 3º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+    
+        var x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x = $ ("#boton1");
+            x.click(asociarClase);
+                x = $ ("#boton2");
+            x.click(disociarClase);
+
+        }
+
+        function asociarClase()
+        {
+            var x = ("#articulo");
+            x.addClass("noticia"); //Añadimos mediante addClass agregamos a la clase noticia. No es necesario aqui especificarla mediante el punto ".noticia" porque el metodo addClass ya especifica y da por sentado que lo que contenga sera una clase.
+        }
+
+        function disociarClase()
+        {
+            var x = ("#articulo");
+            x.removeClass("noticia"); //Quitamos con esta funcion la clase noticia.
+        }
+
+    </script>
+
+    <style type="text/css"> /*Estilos CSS*/
+
+        .noticia /*Clase noticia*/
+        {
+            width: 500px;
+            height: 500px;
+            border:1px solid black;
+            font-family: Arial;
+            font: heigth 10px;
+            color: grey;
+            background-color:rgb(200,200,200);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <input type="button" id="boton1" value="Asociar clase">
+    <input type="button" id="boton2" value="Disociar clase">
+
+    <div id="articulo">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus augue ac neque tincidunt, fringilla rutrum leo bibendum. Ut efficitur convallis feugiat. Pellentesque bibendum pellentesque lorem, id ultricies odio eleifend at. Praesent non ultricies turpis. In porta risus sem, ac cursus velit suscipit sed. Curabitur maximus vitae lorem in cursus. Cras cursus dui nec dolor sollicitudin mollis. Quisque lobortis dui lorem, vitae feugiat lacus venenatis eget. Duis quis feugiat ipsum, in pretium lorem. Ut nec imperdiet metus. Nullam vitae lacus ut justo varius ullamcorper vitae at ex. Integer scelerisque arcu eu nisl varius, at eleifend est aliquam. Nam id maximus nisl. Nulla dignissim ligula eget elit volutpat, eu elementum ligula feugiat.
+    </div>
+
+</body>
+</html>
