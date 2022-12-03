@@ -1,0 +1,69 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Doubleclick
+
+-
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 4º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#hola"); //x tomara el elemento que tenga el ID "hola".
+            
+            /*
+                x.click(pulsar); Especificaremos que cuando se haga 1 solo click llame a la funcion pulsar.
+
+                Comento apra explicar el doble click.
+
+            */
+
+            x.dblclick(pulsar); //Especificaremos que cuando se haga doble click llame a la funcion pulsar2.
+        }
+
+            /*
+            function pulsar()
+            {
+                alert('Haz pulsado el DIV'); //Se indicara medainte alerta que hizo click.
+
+                Comento para explicar el doble click.
+            }
+            */   
+
+        function pulsar()
+        {
+            alert('Haz hecho doble click el DIV'); //Se indicara medainte alerta que hizo doble click.
+        }
+        
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="hola">Pulsar</div>
+
+</body>
+</html>
