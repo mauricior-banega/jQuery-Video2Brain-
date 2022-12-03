@@ -1,0 +1,60 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-MouseUp y MouseDown.
+
+-Crearemos un div del cual cambiara de color cuando realizemos un click, cambiara cuando pulsamos primeramente el boton del raton, haga (mousedown); y cuando seguido "soltamos" el boton del raton (mouseup). jQuery nos permite capturar no solo el click, sino tambien presionar y soltar boton.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 3º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#hola"); //x tomara el elemento que tenga el ID "hola".
+            x.mousedown(presionar); //Especificaremos que cuando presione el boton, osea haga "mousedown", ejecute la fº presionar.
+            x.mouseup(soltar); //Especificaremos que cuando suelte el boton, osea haga "mouseup", ejecute la fº soltar.
+            
+        }
+
+        function presionar()
+        {
+            $(this).css("background-color","red"); //Sobre el elemento que haya presionado le añadire una propiedad css.
+        }
+
+        function soltar()
+        {
+            $(this).css("background-color","blue"); //Sobre el elemento que haya presionado le añadire una propiedad css.
+        }
+        
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="hola">Pulsar</div>
+
+</body>
+</html>
