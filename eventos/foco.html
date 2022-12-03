@@ -1,0 +1,59 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Foco
+
+-En este practico resolveremos un problema muy usual, que es el de borrar el dato que tengamos cargado en el value de nuestro input, en un formulario. Es decir, que aparezca pero al clickear que desaparezca. Es decir que detecte cuando hacemos "foco" sobre un elemento, que sera un campo text y usaremos la opcion de colocar atributos "que sera el value" del campo input.
+
+-Esto es muy comun cuando el value no se borra y la palabra sigue estando en el input, donde el usuario no se da cuenta de borrar el campo, en este caso que dice "Usuario", Envia la informacion de usuario personal pero tambien la palabra Usuario que no se borro. Cargandose asi datos erroneos a nuestra pagina web/base de datos.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 5º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#usuario"); //x tomara el elemento que tenga el ID "usuario".
+            x.focus(enfocar); //Especificaremos que cuando el elemento logre tener el foco, osea logre tener la "ATENCION DEL RATON" mediante el click, ejecute la fº enfocar.
+            
+        } 
+
+        function enfocar()
+        {
+            var x = $("#usuario");
+            x.attr("value",""); //Cuando tengamos a usuario, le decimos que el atributo value pase a estar vacio.
+        }
+        
+    </script>
+
+</head>
+
+<body>
+    
+    <form>
+        <input type="text" value="Usuario" id="usuario">
+        <input type="submit">
+    </form>
+
+</body>
+</html>
