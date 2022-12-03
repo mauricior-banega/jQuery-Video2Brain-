@@ -1,0 +1,59 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-MouseMove
+
+-Crearemos dos div de los cuales usaremos para mostrar el valor de la posicion que tenga nuestro puntero del mouse en la pantalla, con respecto a los ejes x e y. Esto lo realizamos mediante el evento "mousemove" y luego con las propiedades event.clientX (para el eje x) y event.clientY (para el y).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 2º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $(document); //Ponemos (document) para que el programa recorra el raton por todo el documento, y no por un div especifico.
+
+            x.mousemove(moverRaton); //EVENTO MOUSEMOVE
+            
+        }
+
+        function moverRaton()
+        {
+            var x;
+            x = $("#x"); //x toma lugar en la posicion del div
+            x.text("Coordenada x = "+event.clientX); //Para luego mostrar el mensaje + el evento que captura la posicion del mouse en x.
+            x = $("#y"); //x toma lugar en la posicion del div
+            x.text("Coordenada y = "+event.clientY); //Para luego mostrar el mensaje + el evento que captura la posicion del mouse en x.
+        }
+
+        
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="x"></div>
+    <div id="y"></div>
+
+</body>
+</html>
