@@ -1,0 +1,87 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-fadeTo: Nivel de transparencia para ocular/mostrar elementos.
+
+-En este practico (de manera similar al anterior) mostraremos mediante 2 botones como ocultar y mostrar los elementos en HTML mediante la propiedad "fadeTo", que nos permiten ocultar/mostrar pero ademas se le pasa otro argumento que es justamente el nivel de transparencia que quedamos aplicar para uno u otro efecto.
+
+-Estos metodos afectan a la transparencia del elemento haciendolo desaparecer o aparecer pero que no modifican el tamaño del este, a diferencia de hide/slow que se achican o agrandan al ser aplicados.
+
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 9º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#mostrar"); 
+
+            x.click(mostrame); //Cuando se haga click en mostrar, llamara la funcion "mostrame".
+
+            x = $("#ocultar");
+
+            x.click(ocultame); //Cuando se haga click en ocultar, llamara la funcion "ocultame".
+        } 
+
+        //Funcion que mostrara el contenido del div
+        function mostrame() 
+        {
+            var x = $("#objetivo");
+            x.fadeTo("slow", 0.5); //El metodo "faceTo" permite indicar a que nivel de transparencia mostrar, en este caso %50
+            
+        }
+
+        //Funcion que ocultara el contenido del div 
+        function ocultame() 
+        {
+            var x = $("#objetivo");
+            x.fadeTo("fast", 0.1); //Ocultara pero quedara a un nivel de transparencia casi comnpleto, un %10 visible.
+        }
+        
+    </script>
+
+    <!--Agregamos CSS para ver mas claramente el efecto de los cambios de ocultar/mostrar mediante el div con id "objetivo".-->
+    <style type="text/css"> 
+        #objetivo
+        {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <form>
+        <input type="button" id="mostrar" value="Mostrar">
+        <input type="button" id="ocultar" value="Ocultar">
+        <div id="objetivo">Yo soy un div</div>
+    </form>
+
+</body>
+</html>
