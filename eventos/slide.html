@@ -1,0 +1,111 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Slide: Up y Down
+
+-En este practico (de manera similar al anterior) mostraremos en este caso 2 botones que ejecutaran la accion de ocultar y mostrar los elementos en HTML mediante la propiedad "slideUp/slideOut", es decir que realizen un barrido de arriba hacia abajo y viceversa.
+
+-Explicamos que podemos usar para acortar codigo "slideToggle". Comentamos parte de lo anterior para la explicacion de este ultimo.
+
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 11º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#mostrar"); 
+
+            x.click(mostrame2);
+
+/*
+            x.click(mostrame); //Cuando se haga click en mostrar, llamara la funcion "mostrame".
+
+            x = $("#ocultar");
+            x.click(otra); //Cuando se haga click en ocultar, llamara la funcion "otra".
+
+
+*/
+        } 
+
+/*
+        //Funcion que mostrara el contenido del div
+        function mostrame() 
+        {
+            var x = $("#objetivo");
+            x.slideUp("slow"); //El metodo "slideUp" muestra el elemento realizando un barrido de arriba hacia abajo.
+            
+        }
+
+         //Funcion que ocultara el contenido del div
+         function otra() 
+        {
+            var x = $("#objetivo");
+            x.slideDown("slow");  //El metodo "slideDown" muestra el elemento realizando un barrido de abajo hacia arriba.
+            
+        }
+*/
+
+
+        /*
+            Habiendio explicado la funcionalidad de slideUp/slideOut aclaramos que podemos usar (para acordar el codigo de nuestro archivo) una sola funcion que aplica para ambas acciones y es "slideToggle". Comento anterior para explicar nuevo.
+        */
+        
+        //Funcion que mostrara el contenido del div
+        function mostrame2() 
+        {
+            var x = $("#objetivo");
+            x.slideToggle("slow"); //El metodo "slideUp" muestra el elemento realizando un barrido de arriba hacia abajo.
+            
+        }
+
+    </script>
+
+    <!--Agregamos CSS para ver mas claramente el efecto de los cambios de ocultar/mostrar mediante el div con id "objetivo".-->
+    <style type="text/css"> 
+        #objetivo
+        {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <form>
+
+        <input type="button" id="mostrar" value="Mostrar/Ocultar"> 
+
+    <!-- <input type="button" id="mostrar" value="Ocultar"> 
+         <input type="button" id="ocultar" value="Mostrar"> -->
+        <div id="objetivo">Yo soy un div</div>
+    </form>
+
+</body>
+</html>
