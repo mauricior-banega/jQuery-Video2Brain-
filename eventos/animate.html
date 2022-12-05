@@ -1,0 +1,79 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Animate: Animaciones personalizadas
+
+-En este practico veremos como utilizar animaciones para un elemento del archivo HTML.
+
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 12º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x;
+            x = $("#animar"); 
+
+            x.click(animate);
+
+        } 
+
+        //Funcion que mostrara la animacion aplicada
+        function animate() 
+        {
+            var x = $("#objetivo");
+            x.animate({height:300},"slow"); //Indicamos: Que sea lento el cambio de anchura.
+            x.animate({width:300},3000); //Indicamos: Que dure 3000 miliseg el cambio de altura.
+            x.animate({height:100},"slow"); //Indicamos: Que sea normal el cambio de anchura.
+            x.animate({width:100},100); //Indicamos: Que dure 100 miliseg el cambio de altura.
+        }
+
+
+    </script>
+
+    <!--Agregamos CSS para ver mas claramente el efecto de los cambios de ocultar/mostrar mediante el div con id "objetivo".-->
+    <style type="text/css"> 
+        #objetivo
+        {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <form>
+
+        <input type="button" id="animar" value="Animar"> 
+
+        <div id="objetivo">Yo soy un div</div>
+    </form>
+
+</body>
+</html>
