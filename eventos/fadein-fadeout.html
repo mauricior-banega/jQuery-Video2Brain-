@@ -1,0 +1,90 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Ocultar sin escala: degradado (fadeIn-fadeOut)
+
+-En este practico (de manera similar al anterior) mostraremos mediante 2 botones como ocultar y mostrar los elementos en HTML mediante las propiedades "fadeIn" y "faceOut el cual tambien tiene 2 propiedades que pueden ser usadas o no, que son "fast" y "slow".
+-Estos metodos afectan a la transparencia del elemento haciendolo desaparecer o aparecer pero que no modifican el tamaño del este, a diferencia de hide/slow que se achican o agrandan al ser aplicados.
+
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 8º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#mostrar"); 
+
+            x.click(mostrame); //Cuando se haga click en mostrar, llamara la funcion "mostrame".
+
+            x = $("#ocultar");
+
+            x.click(ocultame); //Cuando se haga click en ocultar, llamara la funcion "ocultame".
+        } 
+
+        //Funcion que mostrara el contenido del div
+        function mostrame() 
+        {
+            var x = $("#objetivo");
+            x.fadeIn("slow"); //El metodo "faceIn" muestra elementos con transparencia %0 
+            
+            /*Estos a su vez tambien aceptan los modificadores; "fast" donde realiza la accion mas rapida y "slow" para que sea lenta. Aunque tambien puede estar vacio:
+
+            x.fadeIn(); --- x.fadeOut();
+            */
+        }
+
+        //Funcion que ocultara el contenido del div 
+        function ocultame() 
+        {
+            var x = $("#objetivo");
+            x.fadeOut("fast"); ////El metodo "fadeOut" los oculta con transparencia %100.
+        }
+        
+    </script>
+
+    <!--Agregamos CSS para ver mas claramente el efecto de los cambios de ocultar/mostrar mediante el div con id "objetivo".-->
+    <style type="text/css"> 
+        #objetivo
+        {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <form>
+        <input type="button" id="mostrar" value="Mostrar">
+        <input type="button" id="ocultar" value="Ocultar">
+        <div id="objetivo">Yo soy un div</div>
+    </form>
+
+</body>
+</html>
