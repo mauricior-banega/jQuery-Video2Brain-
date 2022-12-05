@@ -1,0 +1,77 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Toggle 
+
+-En este practico (de manera similar al anterior) mostraremos en este caso 1 solo  boton que ejecutara la accion de ocultar y mostrar los elementos en HTML mediante la propiedad "toggle", sin necesidad de usar una funcion que haga ambas accion sino una sola de un mismo boton.
+
+-Borraremos el boton y funcion de ocultar, se dejara lo funcional para mostrar, que aplicara ambas acciones.
+
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 10º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#mostrar"); 
+
+            x.click(mostrame); //Cuando se haga click en mostrar, llamara la funcion "mostrame".
+
+        } 
+
+        //Funcion que mostrara el contenido del div
+        function mostrame() 
+        {
+            var x = $("#objetivo");
+            x.toggle("slow"); //El metodo "toggle" ejecuta el mostrar el elemento pero tambien lo anula, pudiendo de esta manera actuar como mostrar y ocultar. Aplica tambien las animaciones "fast/slow" o vacio.
+            
+        }
+
+        
+    </script>
+
+    <!--Agregamos CSS para ver mas claramente el efecto de los cambios de ocultar/mostrar mediante el div con id "objetivo".-->
+    <style type="text/css"> 
+        #objetivo
+        {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <form>
+        <input type="button" id="mostrar" value="Mostrar">
+        <div id="objetivo">Yo soy un div</div>
+    </form>
+
+</body>
+</html>
