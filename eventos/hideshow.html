@@ -1,0 +1,88 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Ocultar y Mostrar (Hide y Show)
+
+-En este practico mostraremos mediante 2 botones como ocultar y mostrar los elementos en HTML mediante las propiedades "hide" y "show" con 2 propiedades que pueden ser usadas o no, que son "fast" y "slow".
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Eventos 7º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicializar);
+
+        function inicializar()
+        {
+            var x;
+            x = $("#mostrar"); 
+
+            x.click(mostrame); //Cuando se haga click en mostrar, llamara la funcion "mostrame".
+
+            x = $("#ocultar");
+
+            x.click(ocultame); //Cuando se haga click en ocultar, llamara la funcion "ocultame".
+        } 
+
+        //Funcion que mostrara el contenido del div
+        function mostrame() 
+        {
+            var x = $("#objetivo");
+            x.show("slow"); //El metodo "show" muestra elementos. 
+            
+            /*A su vez estos pueden ser animados mediante 2 modificadores, tanto para show como para hide, y estos son "fast" donde realiza la accion mas rapida y "slow" para que sea lenta. Aunque tambien puede estar vacio:
+
+            x.show(); --- x.hide();
+            */
+        }
+
+        //Funcion que ocultara el contenido del div 
+        function ocultame() 
+        {
+            var x = $("#objetivo");
+            x.hide("fast"); ////El metodo "hide" los oculta
+        }
+        
+    </script>
+
+    <!--Agregamos CSS para ver mas claramente el efecto de los cambios de ocultar/mostrar mediante el div con id "objetivo".-->
+    <style type="text/css"> 
+        #objetivo
+        {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <form>
+        <input type="button" id="mostrar" value="Mostrar">
+        <input type="button" id="ocultar" value="Ocultar">
+        <div id="objetivo">Yo soy un div</div>
+    </form>
+
+</body>
+</html>
