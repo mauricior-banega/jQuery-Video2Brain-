@@ -1,0 +1,78 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Ajax: Load
+
+-La forma mas sencilla de usar el Ajax en jQuery es usando el metodo "Load".
+-En este practico veremos 3 etiquetas de enlace a (a href) que llevara a una pagina cada uno en especifico. Pero claro, al tocar en cada enlace este nos lleva a una pagina en especifico, con "Load" lo que haremos es visualizar a donde nos dirige la pagina pero cargandola justo debajo de los "a href". Sin necesidad de que salga de la pagina actual a otra nueva, sino que se vea todo junto.
+    De esta manera nos evitamos de tener que tocar en cada opcion y volver para atras cada vez que quieramos entrar aun enlace distinto. Esta funcion la hace visible justo debajo, creando un DIV que imprima justamente la pagina ahi mismo.
+
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ajax 1º</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x;
+            x = $("a"); //Busca los elementos a del documento.
+
+            x.click(muestrame); //Llama a la funcion "muestrame" sobre el elemento a al que se haya clickeado.
+        } 
+
+
+        function muestrame()
+        {
+            var pagina = $(this).attr("href"); //Aqui la funcion guarda el valor del atributo de href mediante el acceso this, en la variable pagina.
+
+            var x = $("#hablame"); //La posicion del elemento con ID "hablame" es guardado en x.
+
+            x.load(pagina); //Entonces load cargara lo que contenga el href en la pagina, y lo ejecutara en la posicion de x (en el div del id hablame).
+
+            return false; //Esto es asi porque esta funcion Ajax no debe devolver nada, sino que todo lo que se devuelve, lo hace en el div.
+        }
+
+
+    </script>
+
+    <!-- -->
+    <style type="text/css"> 
+    
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 3 Hipervinculos que redirigen hacia las paginas PHP. Conexion de HTML con PHP --> 
+
+    <a href="colores.php?color=verde">Hablame del verde </a>
+    <a href="colores.php?color=rojo">Hablame del rojo </a>
+    <a href="colores.php?color=azul">Hablame del azul </a>
+
+    <!-- DIV que alojara la pagina que cargue justo debajo de los vinculos. Pero creamos la funcion que lo ejecuta en el script. --->
+
+    <div id="hablame"></div>
+</body>
+</html>
