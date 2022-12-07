@@ -1,0 +1,82 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Ajax: Get y Post en Ajax (Práctico 2)
+
+-En este practico veremos como imprimir el resultado de una multiplicacion que se llevara a cabo en un archivo PHP y que se llamara desde el archivo HTML mendiate el metodo Get, pudiendo ser el caso Post tambien. Lo unico a tener enm cuenta es que ambos coincidan en los documentos.
+-A ese resultado luego explicamos como imprimirlo mediante la funcion que crearemos en el script para que pueda verse dicho resultado en una ventana emergente o alert.
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ajax 2º</title>
+
+    <script type="text/javascript" src="../../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x;
+            x = $("#enviar"); //Asigo x al elemento aquel que tenga el ID "enviar". 
+
+            x.click(calcular); //Llama a la funcion "calcular" sobre el elemento de ID "enviar" al que se haya clickeado.
+        } 
+
+
+        function calcular()
+        {
+            var v = $("#numero").attr("value"); // La variable tomara el valor del elemento input que contiene con un ID respectivo a "numero".
+
+            $.get("calculadora.php", {numero:v}, recibir); 
+            //Aqui usamos el metodo "post" de Ajax para especificar que quiero ejecutar calculadora.php, ademas que quiero enviar el valor del numero  {numero:v} y cuando reciba la informacion quiero ejecutar la funcion recibir, que sera la que enviara el alert con el resultado. Ojo: En el archivo calculadora.php tendremos que cambiar al metodo post para que funcione, tambien en el metodo del form.
+
+            return false;
+        }
+
+        function recibir(datos)
+        {
+            alert(datos); //Le pasamos el parametro datos (creado solo aca), para asegurarnos que lo que salga desde el alert sera exactamente los datos que nos haya enviado Ajax.
+        }
+
+    </script>
+
+    <!-- -->
+    <style type="text/css"> 
+    
+    </style>
+
+</head>
+
+<body>
+
+    Multiplicar por 5 el siguiente numero
+
+    <!-- FORM que alojara 2 inputs, uno que recibe el numero a multiplicar y el otro es el boton. --> 
+
+    <form action="calculadora.php" method="get">
+        <input type="text" id="numero" name="numero">
+        <input type="submit" id="enviar" value="Enviar">
+    </form>
+
+    <!-- DIV que alojara el resultado de la multiplicacion, antes de creado el alert. Ya que luego se mostrara por ahi --->
+
+    <div id="resultado"></div>
+</body>
+</html>
