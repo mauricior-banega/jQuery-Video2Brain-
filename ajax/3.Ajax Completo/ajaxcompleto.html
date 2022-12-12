@@ -1,0 +1,101 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Ajax: Ajax Completo(Práctico 3)
+
+-En este practico veremos 
+----
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ajax 3º</title>
+
+    <script type="text/javascript" src="../../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x;
+            x = $("#enviar"); //Asigo x al elemento aquel que tenga el ID "enviar". 
+
+            x.click(enviar); //Llama a la funcion "calcular" sobre el elemento de ID "enviar" al que se haya clickeado.
+        } 
+
+
+            function enviar() {
+            var v = "#numero".attr("value");
+            $.ajax({
+                async: true,
+                type: "POST",
+                dataType: "html",
+                contentType: "application/x-www-form-urlencoded",
+                url:"ajaxcompleto.php",
+                data: "anio=" + v,
+                beforeSend: inicioEnvio,
+                success:llegada,
+                timeout: 4000,
+                error: problemas,
+                
+            });
+                
+            return false;
+    }
+
+       function inicioEnvio()
+        {
+            var x=$("#resultados");
+            x.html('Cargando...');
+        }
+        
+        function llegada(datos)
+        {
+            $("#resultados").text(datos);
+        }
+
+        function problemas()
+        {
+            $("#resultados").text('Problemas en el servidor.');
+        }
+
+        
+
+    </script>
+
+    <!-- -->
+    <style type="text/css"> 
+    
+    </style>
+
+</head>
+
+<body>
+
+    <!--  --> 
+
+        Dime que año es este
+        <input type="text" id="numero" name="anio">
+        <input type="submit" id="enviar" value="Y te digo cual es el sgte">
+
+    <!-- -->
+
+    <div id="resultados"></div>
+
+</body>
+</html>
