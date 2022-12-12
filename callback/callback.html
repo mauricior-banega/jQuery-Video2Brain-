@@ -1,0 +1,70 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-Callback: Funciones Callback
+
+-En este practico veremos como realizar un rectangulo de manera que al apretar un boton por accion de este el rectangulo se esconda, y muestra "solo al finar la animacion" un alert que indique 'El div ha sido escondido'.
+
+-
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Funciones Callback</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x=$('#escondeme');
+            x.click(esconder);
+        }
+
+        function esconder()
+        {
+            var x;
+            x=$("#rectangulo");
+            x.hide(5000,function(){alert('El div a sido escondido');});
+            //alert('El div a sido escondido'); Si dejamos el alert por fuera de  x.hide este ejecuta la accion de esconder pero al mismo tiempo dispara el alert sin esperar a que finalize la animacion. Para que lo haga luego de finalizada debemos de incluir una funcion llamada "Callback" dentro del hide, que no tendra nombre en este caso, que contendra el alert a ejecutar y que solo aparecera al terminar de esconderse el rectangulo.
+        }
+        
+
+    </script>
+
+    <!-- -->
+    <style type="text/css"> 
+
+        #rectangulo
+        {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;;
+            background: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--  --> 
+        <input type="button" id="escondeme" value="escondeme">
+        <div id="rectangulo"></div>
+
+</body>
+</html>
