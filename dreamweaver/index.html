@@ -1,0 +1,61 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Elementos de jQuery: 
+
+-DreamWeaver: Usando jQuery en DW
+
+-En este practico veremos simplemente como mediante un boton mostramos un texto que aparecera en donde se encuentra pocisionado el div. Es algo de lo que ya hicimos pero en el video ejemplifica utilizando el Adobe Dreamweaver. Es una aplicación informática destinada a la construcción, diseño y edición de sitios y aplicaciones Web basados en estándares. Fue creada por Macromedia y tras la desaparición de esta compañía pasó a manos de Adobe Systems.
+-En el video muestra como este compilador muestra paso a paso ayudas al momento de codificar indicandonos a cada paso y dandonos ayudas para poder crear sin errores de sintaxis nuestro proyecto.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Usando jQuery en DW</title>
+
+    <script type="text/javascript" src="../jquery/jquery.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $('#boton');
+            x.click(rellenar);
+        }
+
+        function rellenar()
+        {
+            var x;
+            x=$("#rellena");
+            x.text('Soy un texto');
+        }
+        
+
+    </script>
+
+    <!-- -->
+    <style type="text/css"> 
+
+    </style>
+
+</head>
+
+<body>
+
+    <!--  --> 
+        <input type="button" id="boton" value="pulsame">
+        <div id="rellena"></div>
+
+</body>
+</html>
