@@ -20,4 +20,11 @@ ACCESO Y CONTENIDO:
 
 -Accediendo en Browse all efects & widgets; veremos que tenemos varias columnas en donde en cada uno contiene elementos, si tocamos en alguno de ellos podremos ver en forma animada "demo" sobre que efecto tiene cada uno. Por ejemplo en Interactions/Draggable - tiene el efecto de mover un rectangulo al ser clickeado.
 
+DESCARGA:
+
+-Nos dirigimos a la pestaña superior izquierda en "Download" y al dia de hoy la version es 1.13.2(Estable, para jQuery1.8+).
+
+-Se nos descarga el zip al cual descargaremos en la carpeta jQueryUI. En el video muestra que existe en la version que el en ese momento descarga, que hay un index al cual al abrirlo le muestra algunos demos que tiene para aplicar. En mi caso no lo tiene.
+
+
 
