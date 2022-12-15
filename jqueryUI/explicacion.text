@@ -5,6 +5,7 @@
 Videos/Temas contenidos del Dashboard: 
     -Que es jQuery UI? - Introduccion (Video 05-01-01)
     -Descargando jQuery UI (Video 05-01-02)
+    -Personalizacion (Video 05-01-03)
 
 -Callback: Funciones Callback
 
@@ -26,5 +27,10 @@ DESCARGA:
 
 -Se nos descarga el zip al cual descargaremos en la carpeta jQueryUI. En el video muestra que existe en la version que el en ese momento descarga, que hay un index al cual al abrirlo le muestra algunos demos que tiene para aplicar. En mi caso no lo tiene.
 
+PERSONALIZACION:
+
+-En el momento antes de descargarlo, la pagina nos permite elegir cual de estos elementos vamos a usar para su descarga y cuales no. Estos son: Núcleo de la interfaz de usuario/Interacciones/Widgests y Efectos.
+
+-Ademas podemos especificar mediante el perfil de usuario que tengamos que elementos contendra la descarga, en Tema podemos elegir UI lightness o Redmond. Pero bajaremos el primero que elementos de color naranja.
 
 
