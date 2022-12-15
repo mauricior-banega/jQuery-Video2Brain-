@@ -1,0 +1,50 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Draggable (05/02/01)
+
+-En este curso de jQuery, veremos que es y como se utiliza jQuery UI
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable</title>
+
+    <!--Ver si va .css al ultimo o no-->
+    <link rel="text/css" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.theme.css" rel="stylesheet"> 
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+
+    <script type="text/javascript">
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $('#muevemueve');
+            x.draggable();
+        }
+    </script>
+
+    
+
+    <style type="text/css">
+        #muevemueve {width: 100px; height: 100px; border:1px solid black;}
+    </style>
+
+
+</head>
+<body>
+    <div id="muevemueve">Mueveme</div>
+</body>
+</html>
