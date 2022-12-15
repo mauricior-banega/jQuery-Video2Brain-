@@ -3,9 +3,9 @@
     4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
 
 Videos/Temas contenidos del Dashboard: 
-    -Draggable (05/02/01)
-
--En este curso de jQuery, veremos que es y como se utiliza jQuery UI
+    -Droppable (05/02/02)
+    
+-Esta propiedad nos permite mover un elemento y soltarlo encima de otro, ademas de realizar alguna accion en caso afirmativo.
 
 -->
 
@@ -15,7 +15,7 @@ Videos/Temas contenidos del Dashboard:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draggable</title>
+    <title>Droppable</title>
 
     <!--Ver si va .css al ultimo o no-->
     <link rel="text/css" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.theme.css" rel="stylesheet"> 
@@ -32,19 +32,31 @@ Videos/Temas contenidos del Dashboard:
         function inicio()
         {
             var x = $('#muevemueve');
-            x.draggable();
+            x.draggable(); //Elemento JQUI que permite mover
+
+            x = $('#sueltame');
+            x.droppable({drop:soltado}); //Elemento JQUI que permite realizar una accion cuando suelte algun elemento encima de el. Se acompaña de "drop", que llama a la accion/funcion, de en este caso cambiar el css cuando eso suceda.
         }
+
+        function soltado()
+        {
+            var x = $("#sueltame")
+            x.css("background","red");
+        }
+
     </script>
 
     
 
     <style type="text/css">
         #muevemueve {width: 100px; height: 100px; border:1px solid black;}
+        #sueltame {width: 300px; height: 300px; border:1px solid black; background: yellow; margin: 10px;}
     </style>
 
 
 </head>
 <body>
     <div id="muevemueve">Mueveme</div>
+    <div id="sueltame">Suelta algo encima de mi</div>
 </body>
 </html>
