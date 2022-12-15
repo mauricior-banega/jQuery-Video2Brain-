@@ -33,4 +33,14 @@ PERSONALIZACION:
 
 -Ademas podemos especificar mediante el perfil de usuario que tengamos que elementos contendra la descarga, en Tema podemos elegir UI lightness o Redmond. Pero bajaremos el primero que elementos de color naranja.
 
+PREPARACION DE ARCHIVOS:
+
+-Dentro de la carpeta jQueryUI del practico, descomprimo ambas versiones del UI descargado. Ahi mismo en el primer directorio Copio/Pego el archivo jquery-ui del UI lightness. 
+
+-Como no tiene carpeta css como muestra en el video, vere mas adelante si es necesario copiarlo y como realizo cambios para que surja efecto sin errores.
+
+-Dentro de la carpeta tambien alojada en el directorio llamada Aplicaciones jQueryUI, creare cada uno de los ejemplos que explique de cada elemento que contiene jQUI.
+
+
+
 
