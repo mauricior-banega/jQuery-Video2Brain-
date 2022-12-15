@@ -1,0 +1,23 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Que es jQuery UI? - Introduccion (Video 05-01-01)
+    -Descargando jQuery UI (Video 05-01-02)
+
+-Callback: Funciones Callback
+
+-En este curso de jQuery, veremos que es y como se utiliza jQuery UI
+
+-->
+
+ACCESO Y CONTENIDO:
+
+-Se accede mediante la pagina principal de jQuery, en la solapa UI, que llevara a jqueryui.com
+
+-Que es especificamente? Es una serie de Plugins empaquetados, que hacen referencia a la UI o "user interface", interfaz de usuario. Van a añadir nuevos eventos, nuevas clases y nuevos elementos a nuestro jQuery de manera que nos va a hacer mas facil realizar interfaces de usuario usando CSS/JavaScript atravez de la libreria jQuery.
+
+-Accediendo en Browse all efects & widgets; veremos que tenemos varias columnas en donde en cada uno contiene elementos, si tocamos en alguno de ellos podremos ver en forma animada "demo" sobre que efecto tiene cada uno. Por ejemplo en Interactions/Draggable - tiene el efecto de mover un rectangulo al ser clickeado.
+
+
