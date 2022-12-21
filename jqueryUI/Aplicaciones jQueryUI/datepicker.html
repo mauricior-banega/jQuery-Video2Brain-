@@ -1,0 +1,61 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Widgets: DatePicker "Calendario" (05/03-04)
+    
+-Esta propiedad nos permite desplegar un calendario que al seleccionar se autocompletara la fecha seleccionada.
+
+ACLARACIONES: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DatePicker</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $("#calendario"); 
+            x.datepicker(); 
+
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <input type="text" id="calendario">
+
+</body>
+</html
