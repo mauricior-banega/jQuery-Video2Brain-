@@ -1,0 +1,70 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Widgets: Autocomplete (05/03/02)
+    
+-Esta propiedad nos permite justamente auto-completar, hallar coincidencias dentro de una matriz. Muy util en formularios. 
+-Creamos un input donde dependiendo lo que vallamos escribiendo, "autocomplete" irá arrojando resultados de los que podremos elejir para que se escriba en el, segun tenga mayor coincidencia letra a letra vallamos escribiendo. Es decir si ponemos la "L" la primera parabra que aparecera es "Limon".s
+
+ACLARACIONES: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var posibilidades = [
+                "Manzana",
+                "Limon",
+                "Naranja",
+                "Platano",
+                "Sandia",
+                "Melon",
+                "Pomelo",
+                "Melocoton",
+            ];
+
+            x = $("#completar");
+            x.autocomplete({source: posibilidades});
+
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+    </style>
+
+
+</head>
+
+<body>
+    <input type="text" id="completar">
+</body>
+</html
