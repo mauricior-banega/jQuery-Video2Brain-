@@ -1,0 +1,73 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Resizable (05/02/03)
+    
+-Esta propiedad nos permite hacer mas grande o pequeños los elementos a los que apuntemos. Lo detectamos viendo en el costado inferior derecho, veremos un tramado chiquito de lineas en el vertice que si tocamos podremos agradar o achicar el elemento.
+
+ACLARACIONES:
+
+(1*) - Los linsk de conexion CSS como lo muestra en el video no conectan. Esto puede verse porque en la explicacion de jqueryUI descarga una carpeta css que en la version actual no esta. Si puede verse al entrar en los ejemplos de ejecucion de esa version, para ejecutar "Resizable" codifica los links de otra manera. Añadiendo estos funciona, por ello es que dejare esos y comento los creados por mi que no funcionan.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <!--Links de conexion de la ubicacion de jqueryUI descargado. (1*)
+    <link rel="text/css" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.css" rel="stylesheet">
+
+    <link rel="text/css" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.theme.css" rel="stylesheet">
+
+    <link rel="text/css" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.structure.css" rel="stylesheet">
+
+    -->
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $('#grande');
+            x.resizable(); //Nos permite cambiar el tamaño 
+
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+        #grande{width: 200px; height: 200px; border:1px solid black; background: grey;}
+        
+    </style>
+
+
+</head>
+
+<body>
+    <div id="grande">
+        <h3>Titulo</h3>
+        <p>Parrafo</p>
+    </div>
+    
+</body>
+</html>
