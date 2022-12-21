@@ -1,0 +1,69 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Selectable (05/02/04)
+    
+-Esta propiedad nos permite seleccionar elementos, en este ejemplo podremos ver que si damos un click "sin soltar" pintara de amarillo (key down), ahora al "soltarlo" lo pinta de rojo (key up). Podemos seleccionar en grupos desplazando la seleccion con el mouse, o bien presionando CRTL seleccionamos elementos puntuales.
+
+ACLARACIONES:
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectable</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            x=$("ul");
+            x.selectable(); 
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+        ul {list-style-type:none;}
+        li {border:1px solid grey; width:500px; height:30px;}
+
+        ul .ui-selecting {background:yellow;} /*Key Down: Click sin soltar*/
+        ul .ui-selected {background:red;} /*Key Up: Click al soltar*/
+        
+    </style>
+
+
+</head>
+
+<body>
+    <ul id="seleccionable">
+        <li>Manzanas</li>
+        <li>Peras</li>
+        <li>Platanos</li>
+        <li>Naranjas</li>
+        <li>Sandias</li>
+    </ul>
+</body>
+</html>
