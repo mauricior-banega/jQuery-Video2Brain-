@@ -1,0 +1,69 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Sortable (05/02/05)
+    
+-Esta propiedad nos permite cambiar de lugar elementos definidos, en este caso cambiaremos posicion los li de nuestro documento. Por ejemplo sin tocamos en Naranjas podremos arrastrarlo a cualquier orden que desieemos solo con seleccion y arrastre.
+
+ACLARACIONES: Usaremos el mismo ejercicio a modo de ejemplo del practico aplicado de Selectable (05/02/04).
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            x=$("ul");
+            x.sortable(); 
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+        ul {list-style-type:none;}
+        li {border:1px solid grey; width:500px; height:30px;}
+
+        ul .ui-selecting {background:yellow;} /*Key Down: Click sin soltar*/
+        ul .ui-selected {background:red;} /*Key Up: Click al soltar*/
+        
+    </style>
+
+
+</head>
+
+<body>
+    <ul id="seleccionable">
+        <li>Manzanas</li>
+        <li>Peras</li>
+        <li>Platanos</li>
+        <li>Naranjas</li>
+        <li>Sandias</li>
+    </ul>
+</body>
+</html
