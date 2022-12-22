@@ -1,0 +1,64 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Widgets: Progressbar (05/03-06)
+    
+-Esta propiedad es un componente visual que nos permite ver el porcentaje de algun elemento, que si trabajamos en convinacion con Ajax para determinar el porcentaje de carga de un elemento que este llegando o conteniendo desde un servidor. EN este caso pondremos como ejemplo value:50, por ende pintara una barra que esta cargada a la mitad.
+
+ACLARACIONES: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressbar</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $("#barradeprogreso"); 
+            x.progressbar({value:50}); 
+
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+
+    </style>
+
+
+</head>
+
+<body>
+    
+    <div id="barradeprogreso">
+      
+    </div>
+    
+
+</body>
+</html
