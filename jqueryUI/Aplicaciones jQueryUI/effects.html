@@ -1,0 +1,79 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Effects (05/04-01)
+    
+-Esta propiedad es un efecto que nos permite animar algun elemento predefiniendo el tipo de efecto determinado. De los cuales podremos ver en la pagina de jQueryUI podemos ver la demo de cualquiera de ellos: https://jqueryui.com/effect/
+
+-Los tipos son: Blind, Bounce, Clip, Drop, Explode, Fade, Fold, Highlight, Puff, Pulsate, Scale, Shake, Size, Slide y Transfer.
+
+ACLARACIONES: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $("#boton"); 
+            x.click(efectos); 
+        }
+
+        function efectos()
+        {
+            var x = $("#efectos");
+            x.effect("fold");
+        }
+    </script>
+
+    
+
+    <style type="text/css">
+
+        #efectos{
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            border: 1px soplid grey;
+            position: relative;
+            background: rgba(0, 0,0, 0.1);
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    
+    <input type="button" id="boton" value="Efectos">
+     <div id="efectos">
+         <h3>Titulo</h3>
+         <p>Texto</p>
+     </div>
+
+</body>
+</html
