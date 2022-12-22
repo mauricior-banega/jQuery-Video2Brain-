@@ -1,0 +1,82 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Widgets: Tabs "Pestañas" (05/03-08)
+    
+-Esta propiedad es un componente visual que nos permite presentar de forma ordenada gran cantidad de informacion.
+-Crearemos 3 parrafos/RENGLONES, de los cuales los dispondremos en 3 pestañas que podremos ir abriendo segun elijamos.
+
+ACLARACIONES: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+
+    <!--Links de conexion sacados de la web jqueryUI. -->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+
+    <script type="text/javascript" src="../jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+
+        var x;
+        x = $(document);
+        x.ready(inicio);
+
+        function inicio()
+        {
+            var x = $("#pestanas"); 
+            x.tabs(); 
+
+        }
+
+    </script>
+
+    
+
+    <style type="text/css">
+
+
+    </style>
+
+
+</head>
+
+<body>
+    
+    <div id="pestanas">
+
+        <ul>
+            <li><a href="#pestana1">Enlace 1</a></li>
+            <li><a href="#pestana2">Enlace 2</a></li>
+            <li><a href="#pestana3">Enlace 3</a></li>
+        </ul>
+
+        <div id="pestana1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet pharetra magna. Aliquam vulputate aliquam erat, in blandit elit pulvinar non. Aliquam erat volutpat. Integer eu sem lorem. 
+        </div>
+
+        <div id="pestana2">
+            AAAAAAAAAAAAAAAAAAAAAAAAAAA
+        </div>
+        
+        <div id="pestana3">
+            XXXXXXXXXXXXXXXXXXXXXXXXXXX
+        </div>
+
+    </div>
+
+</body>
+</html
