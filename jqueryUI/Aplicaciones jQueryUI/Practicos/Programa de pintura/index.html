@@ -1,0 +1,43 @@
+<!--
+
+    4-jQuery (Curso VideotuBrain) - Todos los videos estan en carpeta: 9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Proyecto práctico: Pragrama de pintura (Desde 06/01-01 hasta 06/02-05)
+    
+-Este práctico pintara (en un div lienzo o caja de espacio en blanco) 3 colores que podran ser seleccionados a travez de botones.
+
+ACLARACIONES: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Pintura</title>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="pintor.js"></script>
+
+    <style type="text/css">
+        #lienzo
+        {
+            width: 500px;
+            height: 500px;
+            border:1px solid grey;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="lienzo"></div>
+    <input type="button" id="rojo" value="Rojo">
+    <input type="button" id="verde" value="Verde">
+    <input type="button" id="azul" value="Azul">
+
+</body>
+</html>
