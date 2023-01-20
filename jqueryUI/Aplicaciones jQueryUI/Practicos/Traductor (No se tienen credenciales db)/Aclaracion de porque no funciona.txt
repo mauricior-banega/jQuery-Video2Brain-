@@ -1,0 +1,2 @@
+-En el practico para ejecutar Adminer solicita Login+Contraseña del cual en el video omite y no se puede acceder a ella. 
+-Por ende no puede seguirse el practico paso a paso y seseguira con el siguiente practico.
